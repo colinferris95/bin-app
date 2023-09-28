@@ -3,7 +3,7 @@
         'name' => 'laminas/laminas-mvc-skeleton',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => 'd49e2d820809a43d931fc724b43fa1930579611f',
+        'reference' => 'ce122ab8d5f5ff4435fe69a85b14e3cd7a3040df',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -67,6 +67,15 @@
             'reference' => 'a01e937a41909df8a6750d500a819fbda4ce6be0',
             'type' => 'library',
             'install_path' => __DIR__ . '/../laminas/laminas-development-mode',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'laminas/laminas-diactoros' => array(
+            'pretty_version' => '2.17.0',
+            'version' => '2.17.0.0',
+            'reference' => '5b32597aa46b83c8b85bb1cf9a6ed4fe7dd980c5',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../laminas/laminas-diactoros',
             'aliases' => array(),
             'dev_requirement' => false,
         ),
@@ -172,7 +181,7 @@
         'laminas/laminas-mvc-skeleton' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => 'd49e2d820809a43d931fc724b43fa1930579611f',
+            'reference' => 'ce122ab8d5f5ff4435fe69a85b14e3cd7a3040df',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
@@ -398,6 +407,36 @@
             'dev_requirement' => false,
             'provided' => array(
                 0 => '^1.0',
+            ),
+        ),
+        'psr/http-factory' => array(
+            'pretty_version' => '1.0.2',
+            'version' => '1.0.2.0',
+            'reference' => 'e616d01114759c4c489f93b099585439f795fe35',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../psr/http-factory',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'psr/http-factory-implementation' => array(
+            'dev_requirement' => false,
+            'provided' => array(
+                0 => '1.0',
+            ),
+        ),
+        'psr/http-message' => array(
+            'pretty_version' => '1.1',
+            'version' => '1.1.0.0',
+            'reference' => 'cb6ce4845ce34a8ad9e68117c10ee90a29919eba',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../psr/http-message',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'psr/http-message-implementation' => array(
+            'dev_requirement' => false,
+            'provided' => array(
+                0 => '1.0',
             ),
         ),
         'sebastian/cli-parser' => array(
