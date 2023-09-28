@@ -39,12 +39,17 @@ class BinUtilController extends AbstractActionController
         $inputArray = preg_split ("/\, /", $formData["inputData"]); 
         $bin->setInput($inputArray);
 
-        $response;
         if ($bin->getFilterType() == "width"){
-            $response = $bin->widthFilter();
+            $bin->widthFilter();
         }
+        $binResp = new BinResp($bin->high,$bin->medium,$bin->low);
 
-        $myJSON = json_encode($myObj);
+
+        $viewModel = new JsonModel();
+        $viewModel->setVariable('High', $binResp->high);
+        $viewModel->setVariable('Medium', $binResp->medium);
+        $viewModel->setVariable('Low', $binResp->low);
+        return $viewModel;
     }
 
     public function frequencyAction(){
