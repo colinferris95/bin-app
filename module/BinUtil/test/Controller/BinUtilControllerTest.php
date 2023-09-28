@@ -58,9 +58,32 @@ class BinUtilControllerTest extends AbstractHttpControllerTestCase
     }
 
     public function testBinConstruct(){
-        $bin = new Bin("frequency",array(0.1, 3.4, 3.5, 3.6, 7.0, 9.0, 6.0, 4.4, 2.5, 3.9, 4.5, 2.8));
+        $bin = new Bin("frequency");
 
-        $this->assertSame("frequency",$bin->getFilterType());
+        $this->assertSame($bin->getFilterType(),"frequency");
+        $this->assertNull($bin->input,"input should be null");
+        $this->assertSame($bin->high,array());
+        $this->assertSame($bin->medium,array());
+        $this->assertSame($bin->low,array());
 
+    }
+
+    public function testWidth(){
+        $bin = new Bin("width");
+        $inputArray = array("0.1", "3.4", "3.5", "3.6", "7.0", "9.0", "6.0", "4.4", "2.5", "3.9", "4.5", "2.8");
+        $bin->setInput($inputArray);
+        $bin->widthFilter();
+        $this->assertSame($bin->high,array("7.0","9.0"));
+        $this->assertSame($bin->medium,array("3.4","3.5","3.6","3.9","4.4","4.5","6.0"));
+        $this->assertSame($bin->low,array("0.1","2.5","2.8"));
+    }
+    public function testFrequency(){
+        $bin = new Bin("frequency");
+        $inputArray = array("0.1", "3.4", "3.5", "3.6", "7.0", "9.0", "6.0", "4.4", "2.5", "3.9", "4.5", "2.8");
+        $bin->setInput($inputArray);
+        $bin->frequencyFilter();
+        $this->assertSame($bin->high,array("4.5","6.0","7.0","9.0"));
+        $this->assertSame($bin->medium,array("3.5","3.6","3.9","4.4"));
+        $this->assertSame($bin->low,array("0.1","2.5","2.8","3.4"));
     }
 }
