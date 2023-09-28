@@ -13,6 +13,9 @@ class Bin{
     function __construct($filterType, $input){
         $this->filterType = $filterType;
         $this->input = $input;
+        $this->$high = array();
+        $this->$medium = array();
+        $this->$low = array();
     }
 
     public function getFilterType(){
@@ -32,6 +35,21 @@ class Bin{
         $highInterval = array($intervalPacing*2, $highestNumber);
         $mediumInterval = array($intervalPacing, $intervalPacing*2);
         $lowInterval = array($lowestNumber,$intervalPacing);
+
+        foreach ($sortedArray as $arrVal){
+            if ($arrVal <= $lowInterval[1]){
+                $low[] = $arrVal;
+            }
+            else if ($arrVal <= $mediumInterval[1] && $arrVal > $mediumInterval[0]){
+                $medium[] = $arrVal;
+            }
+            else if ($arrVal <= $highInterval[1] && $arrVal > $highInterval[0]){
+                $high[] = $arrVal;
+            }
+            else{
+                //throw exception
+            }
+        }
 
     }
 
