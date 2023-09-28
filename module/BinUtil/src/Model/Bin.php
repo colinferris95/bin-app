@@ -4,18 +4,18 @@ namespace BinUtil\Model;
 class Bin{
 
     public $filterType;
+    public $input;
     public $high;
     public $medium;
     public $low;
-    public $input;
 
     //initialize bin with filter type either "width" or "frequency", and then input numbers
     function __construct($filterType, $input){
         $this->filterType = $filterType;
         $this->input = $input;
-        $this->$high = array();
-        $this->$medium = array();
-        $this->$low = array();
+        $this->high = array();
+        $this->medium = array();
+        $this->low = array();
     }
 
     public function getFilterType(){
