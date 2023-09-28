@@ -31,6 +31,19 @@ return [
                     ],
                 ],
             ],
+            'binutil/width' => [
+                'type'    => Segment::class,
+                'options' => [
+                    'route' => '/binutil/width',
+                    'constraints' => [
+                        'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
+                    ],
+                    'defaults' => [
+                        'controller' => Controller\BinUtilController::class,
+                        'action'     => 'width',
+                    ],
+                ],
+            ],
         ],
     ],
     
