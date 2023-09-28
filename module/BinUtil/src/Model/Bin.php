@@ -55,7 +55,26 @@ class Bin{
 
     //divide high medium and low bins by equal amount of numbers
     public function frequencyFilter(){
+        $sortedArray = $this->input;
+        sort($sortedArray);
+        $arrLength = count($sortedArray);
+        $maxBinAmount = $arrLength/3;
 
+        foreach ($sortedArray as $arrVal){
+            if (count($low) < $maxBinAmount){
+                $low[] = $arrVal;
+            }
+            else if (count($medium) < $maxBinAmount){
+                $medium[] = $arrVal;
+            }
+            else if (count($high) < $maxBinAmount){
+                $high[] = $arrVal;
+            }
+            else{
+                //throw exception
+            }
+        }
+        
     }
 
 
