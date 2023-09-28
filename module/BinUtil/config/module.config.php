@@ -48,8 +48,9 @@ return [
     ],
     
     'view_manager' => [
-        'template_path_stack' => [
-            'binutil' => __DIR__ . '/../view',
+        /* ... */
+        'strategies' => [
+            'ViewJsonStrategy',
         ],
     ],
 ];

@@ -12,6 +12,7 @@ return [
     'Laminas\Filter',
     'Laminas\Router',
     'Laminas\Validator',
+    'Laminas\Diactoros',
     'Application',
     'BinUtil'
 ];

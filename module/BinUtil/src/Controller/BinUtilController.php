@@ -7,6 +7,8 @@ use BinUtil\Model\BinResp;
 use BinUtil\Form\BinForm;
 use Laminas\Mvc\Controller\AbstractActionController;
 use Laminas\View\Model\ViewModel;
+use Laminas\View\Model\JsonModel;
+use Laminas\View\Model\FeedModel;
 
 
 class BinUtilController extends AbstractActionController
@@ -70,8 +72,12 @@ class BinUtilController extends AbstractActionController
         }
         $binResp = new BinResp($bin->high,$bin->medium,$bin->low);
 
-        $myJSON = json_encode($binResp);
-        return $myJSON;
+
+        $viewModel = new JsonModel();
+        $viewModel->setVariable('High', $binResp->high);
+        $viewModel->setVariable('Medium', $binResp->medium);
+        $viewModel->setVariable('Low', $binResp->low);
+        return $viewModel;
     }
 
     public function addAction()
