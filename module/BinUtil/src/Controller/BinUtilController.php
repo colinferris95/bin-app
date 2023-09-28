@@ -22,14 +22,21 @@ class BinUtilController extends AbstractActionController
         if (!$request->isPost()) {
             //throw exception
         }
+        //form to get input from post
         $form = new BinForm();
+        $bin = new Bin("width");
         $data = $request->getPost();
+        $form->setInputFilter($bin->getInputFilter());
         $form->setData($request->getPost());
+        if (! $form->isValid()) {
+            return ['form' => $form];
+        }
+
+        $formData = $form->getData();
+        $inputArray = preg_split ("/\, /", $formData["inputData"]); 
+        $bin->setInput($inputArray);
 
         $response;
-        //$inputArray = array(0.1, 3.4, 3.5, 3.6, 7.0, 9.0, 6.0, 4.4, 2.5, 3.9, 4.5, 2.8);
-        $inputArray = array(5, 9, 3, 13, 35, 60, 24, 43, 50, 55, 99, 87, 65);
-        $bin = new Bin("width",$inputArray);
         if ($bin->getFilterType() == "width"){
             $response = $bin->widthFilter();
         }

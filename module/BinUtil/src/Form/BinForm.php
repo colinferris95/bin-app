@@ -10,5 +10,9 @@ class BinForm extends Form
         // We will ignore the name provided to the constructor
         parent::__construct('bin');
 
+        $this->add([
+            'name' => 'inputData',
+            'type' => 'hidden',
+        ]);
     }
 }
