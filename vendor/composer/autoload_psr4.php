@@ -27,6 +27,7 @@ return array(
     'Laminas\\Config\\' => array($vendorDir . '/laminas/laminas-config/src'),
     'Laminas\\ComponentInstaller\\' => array($vendorDir . '/laminas/laminas-component-installer/src'),
     'Brick\\VarExporter\\' => array($vendorDir . '/brick/varexporter/src'),
+    'BinUtil\\' => array($baseDir . '/module/BinUtil/src'),
     'Application\\' => array($baseDir . '/module/Application/src'),
     'ApplicationTest\\' => array($baseDir . '/module/Application/test'),
 );

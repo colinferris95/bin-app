@@ -18,7 +18,8 @@
     },
     "autoload": {
         "psr-4": {
-            "Application\\": "module/Application/src/"
+            "Application\\": "module/Application/src/",
+            "BinUtil\\": "module/BinUtil/src/"
         }
     },
     "autoload-dev": {
