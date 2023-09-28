@@ -6,6 +6,8 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
+    'phpDocumentor\\Reflection\\' => array($vendorDir . '/phpdocumentor/reflection-common/src', $vendorDir . '/phpdocumentor/type-resolver/src', $vendorDir . '/phpdocumentor/reflection-docblock/src'),
+    'Webmozart\\Assert\\' => array($vendorDir . '/webmozart/assert/src'),
     'Webimpress\\SafeWriter\\' => array($vendorDir . '/webimpress/safe-writer/src'),
     'Symfony\\Polyfill\\Php80\\' => array($vendorDir . '/symfony/polyfill-php80'),
     'Symfony\\Polyfill\\Mbstring\\' => array($vendorDir . '/symfony/polyfill-mbstring'),
@@ -13,7 +15,9 @@ return array(
     'Symfony\\Component\\DomCrawler\\' => array($vendorDir . '/symfony/dom-crawler'),
     'Symfony\\Component\\CssSelector\\' => array($vendorDir . '/symfony/css-selector'),
     'Psr\\Container\\' => array($vendorDir . '/psr/container/src'),
+    'Prophecy\\' => array($vendorDir . '/phpspec/prophecy/src/Prophecy'),
     'PhpParser\\' => array($vendorDir . '/nikic/php-parser/lib/PhpParser'),
+    'PHPStan\\PhpDocParser\\' => array($vendorDir . '/phpstan/phpdoc-parser/src'),
     'Laminas\\View\\' => array($vendorDir . '/laminas/laminas-view/src'),
     'Laminas\\Validator\\' => array($vendorDir . '/laminas/laminas-validator/src'),
     'Laminas\\Uri\\' => array($vendorDir . '/laminas/laminas-uri/src'),
@@ -33,9 +37,11 @@ return array(
     'Laminas\\Config\\' => array($vendorDir . '/laminas/laminas-config/src'),
     'Laminas\\ComponentInstaller\\' => array($vendorDir . '/laminas/laminas-component-installer/src'),
     'Doctrine\\Instantiator\\' => array($vendorDir . '/doctrine/instantiator/src/Doctrine/Instantiator'),
+    'Doctrine\\Deprecations\\' => array($vendorDir . '/doctrine/deprecations/lib/Doctrine/Deprecations'),
     'DeepCopy\\' => array($vendorDir . '/myclabs/deep-copy/src/DeepCopy'),
     'Brick\\VarExporter\\' => array($vendorDir . '/brick/varexporter/src'),
     'BinUtil\\' => array($baseDir . '/module/BinUtil/src'),
+    'BinUtilTest\\' => array($baseDir . '/module/BinUtil/test'),
     'Application\\' => array($baseDir . '/module/Application/src'),
     'ApplicationTest\\' => array($baseDir . '/module/Application/test'),
 );

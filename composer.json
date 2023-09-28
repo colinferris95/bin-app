@@ -19,7 +19,8 @@
     "autoload": {
         "psr-4": {
             "Application\\": "module/Application/src/",
-            "BinUtil\\": "module/BinUtil/src/"
+            "BinUtil\\": "module/BinUtil/src/",
+            "BinUtilTest\\": "module/BinUtil/test/"
         }
     },
     "autoload-dev": {
@@ -60,6 +61,7 @@
     },
     "require-dev": {
         "laminas/laminas-test": "^4.3",
-        "phpunit/phpunit": "^9.6"
+        "phpunit/phpunit": "^9.6",
+        "phpspec/prophecy": "^1.17"
     }
 }

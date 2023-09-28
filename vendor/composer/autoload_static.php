@@ -17,8 +17,13 @@ class ComposerStaticInitab8368c8b9287e68b02f6c597899a6a1
     );
 
     public static $prefixLengthsPsr4 = array (
+        'p' => 
+        array (
+            'phpDocumentor\\Reflection\\' => 25,
+        ),
         'W' => 
         array (
+            'Webmozart\\Assert\\' => 17,
             'Webimpress\\SafeWriter\\' => 22,
         ),
         'S' => 
@@ -32,7 +37,9 @@ class ComposerStaticInitab8368c8b9287e68b02f6c597899a6a1
         'P' => 
         array (
             'Psr\\Container\\' => 14,
+            'Prophecy\\' => 9,
             'PhpParser\\' => 10,
+            'PHPStan\\PhpDocParser\\' => 21,
         ),
         'L' => 
         array (
@@ -58,12 +65,14 @@ class ComposerStaticInitab8368c8b9287e68b02f6c597899a6a1
         'D' => 
         array (
             'Doctrine\\Instantiator\\' => 22,
+            'Doctrine\\Deprecations\\' => 22,
             'DeepCopy\\' => 9,
         ),
         'B' => 
         array (
             'Brick\\VarExporter\\' => 18,
             'BinUtil\\' => 8,
+            'BinUtilTest\\' => 12,
         ),
         'A' => 
         array (
@@ -73,6 +82,16 @@ class ComposerStaticInitab8368c8b9287e68b02f6c597899a6a1
     );
 
     public static $prefixDirsPsr4 = array (
+        'phpDocumentor\\Reflection\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/phpdocumentor/reflection-common/src',
+            1 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
+            2 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
+        ),
+        'Webmozart\\Assert\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/webmozart/assert/src',
+        ),
         'Webimpress\\SafeWriter\\' => 
         array (
             0 => __DIR__ . '/..' . '/webimpress/safe-writer/src',
@@ -101,9 +120,17 @@ class ComposerStaticInitab8368c8b9287e68b02f6c597899a6a1
         array (
             0 => __DIR__ . '/..' . '/psr/container/src',
         ),
+        'Prophecy\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/phpspec/prophecy/src/Prophecy',
+        ),
         'PhpParser\\' => 
         array (
             0 => __DIR__ . '/..' . '/nikic/php-parser/lib/PhpParser',
+        ),
+        'PHPStan\\PhpDocParser\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/phpstan/phpdoc-parser/src',
         ),
         'Laminas\\View\\' => 
         array (
@@ -181,6 +208,10 @@ class ComposerStaticInitab8368c8b9287e68b02f6c597899a6a1
         array (
             0 => __DIR__ . '/..' . '/doctrine/instantiator/src/Doctrine/Instantiator',
         ),
+        'Doctrine\\Deprecations\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/doctrine/deprecations/lib/Doctrine/Deprecations',
+        ),
         'DeepCopy\\' => 
         array (
             0 => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy',
@@ -192,6 +223,10 @@ class ComposerStaticInitab8368c8b9287e68b02f6c597899a6a1
         'BinUtil\\' => 
         array (
             0 => __DIR__ . '/../..' . '/module/BinUtil/src',
+        ),
+        'BinUtilTest\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/module/BinUtil/test',
         ),
         'Application\\' => 
         array (
