@@ -31,12 +31,26 @@ return [
                     ],
                 ],
             ],
+            'binutil/width' => [
+                'type'    => Segment::class,
+                'options' => [
+                    'route' => '/binutil/width',
+                    'constraints' => [
+                        'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
+                    ],
+                    'defaults' => [
+                        'controller' => Controller\BinUtilController::class,
+                        'action'     => 'width',
+                    ],
+                ],
+            ],
         ],
     ],
     
     'view_manager' => [
-        'template_path_stack' => [
-            'binutil' => __DIR__ . '/../view',
+        /* ... */
+        'strategies' => [
+            'ViewJsonStrategy',
         ],
     ],
 ];

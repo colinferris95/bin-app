@@ -1,7 +1,15 @@
 <?php
 namespace BinUtil\Model;
+use DomainException;
+use Laminas\Filter\StringTrim;
+use Laminas\Filter\StripTags;
+use Laminas\Filter\ToInt;
+use Laminas\InputFilter\InputFilter;
+use Laminas\InputFilter\InputFilterAwareInterface;
+use Laminas\InputFilter\InputFilterInterface;
+use Laminas\Validator\StringLength;
 
-class Bin{
+class Bin implements InputFilterAwareInterface{
 
     public $filterType;
     public $input;
@@ -9,10 +17,12 @@ class Bin{
     public $medium;
     public $low;
 
+    private $inputFilter;
+
+
     //initialize bin with filter type either "width" or "frequency", and then input numbers
-    function __construct($filterType, $input){
+    function __construct($filterType){
         $this->filterType = $filterType;
-        $this->input = $input;
         $this->high = array();
         $this->medium = array();
         $this->low = array();
@@ -20,6 +30,12 @@ class Bin{
 
     public function getFilterType(){
         return $this->filterType;
+    }
+    public function setInput($input){
+        $this->input = $input;
+    }
+    public function getInput(){
+        return $this->input;
     }
 
     //divide high medium and low bins by width intervals
@@ -38,13 +54,13 @@ class Bin{
 
         foreach ($sortedArray as $arrVal){
             if ($arrVal <= $lowInterval[1]){
-                $low[] = $arrVal;
+                $this->low[] = $arrVal;
             }
             else if ($arrVal <= $mediumInterval[1] && $arrVal > $mediumInterval[0]){
-                $medium[] = $arrVal;
+                $this->medium[] = $arrVal;
             }
             else if ($arrVal <= $highInterval[1] && $arrVal > $highInterval[0]){
-                $high[] = $arrVal;
+                $this->high[] = $arrVal;
             }
             else{
                 //throw exception
@@ -61,20 +77,47 @@ class Bin{
         $maxBinAmount = $arrLength/3;
 
         foreach ($sortedArray as $arrVal){
-            if (count($low) < $maxBinAmount){
-                $low[] = $arrVal;
+            if (count($this->low) < $maxBinAmount){
+                $this->low[] = $arrVal;
             }
-            else if (count($medium) < $maxBinAmount){
-                $medium[] = $arrVal;
+            else if (count($this->medium) < $maxBinAmount){
+                $this->medium[] = $arrVal;
             }
-            else if (count($high) < $maxBinAmount){
-                $high[] = $arrVal;
+            else if (count($this->high) < $maxBinAmount){
+                $this->high[] = $arrVal;
             }
             else{
                 //throw exception
             }
         }
         
+    }
+
+    public function setInputFilter(InputFilterInterface $inputFilter){
+        throw new DomainException(sprintf(
+            '%s does not allow injection of an alternate input filter',
+            __CLASS__
+        ));
+    }
+
+    public function getInputFilter(){
+        if ($this->inputFilter) {
+            return $this->inputFilter;
+        }
+
+        $inputFilter = new InputFilter();
+
+        $inputFilter->add([
+            'name' => 'inputData',
+            'required' => true,
+            'filters' => [
+                ['name' => StripTags::class],
+            ],
+        ]);
+
+
+        $this->inputFilter = $inputFilter;
+        return $this->inputFilter;
     }
 
 
