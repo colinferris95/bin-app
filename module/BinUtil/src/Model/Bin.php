@@ -54,13 +54,13 @@ class Bin implements InputFilterAwareInterface{
 
         foreach ($sortedArray as $arrVal){
             if ($arrVal <= $lowInterval[1]){
-                $low[] = $arrVal;
+                $this->low[] = $arrVal;
             }
             else if ($arrVal <= $mediumInterval[1] && $arrVal > $mediumInterval[0]){
-                $medium[] = $arrVal;
+                $this->medium[] = $arrVal;
             }
             else if ($arrVal <= $highInterval[1] && $arrVal > $highInterval[0]){
-                $high[] = $arrVal;
+                $this->high[] = $arrVal;
             }
             else{
                 //throw exception
@@ -77,14 +77,14 @@ class Bin implements InputFilterAwareInterface{
         $maxBinAmount = $arrLength/3;
 
         foreach ($sortedArray as $arrVal){
-            if (count($low) < $maxBinAmount){
-                $low[] = $arrVal;
+            if (count($this->low) < $maxBinAmount){
+                $this->low[] = $arrVal;
             }
-            else if (count($medium) < $maxBinAmount){
-                $medium[] = $arrVal;
+            else if (count($this->medium) < $maxBinAmount){
+                $this->medium[] = $arrVal;
             }
-            else if (count($high) < $maxBinAmount){
-                $high[] = $arrVal;
+            else if (count($this->high) < $maxBinAmount){
+                $this->high[] = $arrVal;
             }
             else{
                 //throw exception
