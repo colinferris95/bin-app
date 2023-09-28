@@ -6,7 +6,7 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
-    'phpDocumentor\\Reflection\\' => array($vendorDir . '/phpdocumentor/reflection-common/src', $vendorDir . '/phpdocumentor/type-resolver/src', $vendorDir . '/phpdocumentor/reflection-docblock/src'),
+    'phpDocumentor\\Reflection\\' => array($vendorDir . '/phpdocumentor/reflection-common/src', $vendorDir . '/phpdocumentor/reflection-docblock/src', $vendorDir . '/phpdocumentor/type-resolver/src'),
     'Webmozart\\Assert\\' => array($vendorDir . '/webmozart/assert/src'),
     'Webimpress\\SafeWriter\\' => array($vendorDir . '/webimpress/safe-writer/src'),
     'Symfony\\Polyfill\\Php80\\' => array($vendorDir . '/symfony/polyfill-php80'),
@@ -30,7 +30,11 @@ return array(
     'Laminas\\ModuleManager\\' => array($vendorDir . '/laminas/laminas-modulemanager/src'),
     'Laminas\\Loader\\' => array($vendorDir . '/laminas/laminas-loader/src'),
     'Laminas\\Json\\' => array($vendorDir . '/laminas/laminas-json/src'),
+    'Laminas\\InputFilter\\' => array($vendorDir . '/laminas/laminas-inputfilter/src'),
+    'Laminas\\Hydrator\\' => array($vendorDir . '/laminas/laminas-hydrator/src'),
     'Laminas\\Http\\' => array($vendorDir . '/laminas/laminas-http/src'),
+    'Laminas\\Form\\' => array($vendorDir . '/laminas/laminas-form/src'),
+    'Laminas\\Filter\\' => array($vendorDir . '/laminas/laminas-filter/src'),
     'Laminas\\EventManager\\' => array($vendorDir . '/laminas/laminas-eventmanager/src'),
     'Laminas\\Escaper\\' => array($vendorDir . '/laminas/laminas-escaper/src'),
     'Laminas\\DevelopmentMode\\' => array($vendorDir . '/laminas/laminas-development-mode/src'),

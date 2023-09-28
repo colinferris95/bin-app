@@ -55,7 +55,11 @@ class ComposerStaticInitab8368c8b9287e68b02f6c597899a6a1
             'Laminas\\ModuleManager\\' => 22,
             'Laminas\\Loader\\' => 15,
             'Laminas\\Json\\' => 13,
+            'Laminas\\InputFilter\\' => 20,
+            'Laminas\\Hydrator\\' => 17,
             'Laminas\\Http\\' => 13,
+            'Laminas\\Form\\' => 13,
+            'Laminas\\Filter\\' => 15,
             'Laminas\\EventManager\\' => 21,
             'Laminas\\Escaper\\' => 16,
             'Laminas\\DevelopmentMode\\' => 24,
@@ -85,8 +89,8 @@ class ComposerStaticInitab8368c8b9287e68b02f6c597899a6a1
         'phpDocumentor\\Reflection\\' => 
         array (
             0 => __DIR__ . '/..' . '/phpdocumentor/reflection-common/src',
-            1 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
-            2 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
+            1 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
+            2 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
         ),
         'Webmozart\\Assert\\' => 
         array (
@@ -180,9 +184,25 @@ class ComposerStaticInitab8368c8b9287e68b02f6c597899a6a1
         array (
             0 => __DIR__ . '/..' . '/laminas/laminas-json/src',
         ),
+        'Laminas\\InputFilter\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/laminas/laminas-inputfilter/src',
+        ),
+        'Laminas\\Hydrator\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/laminas/laminas-hydrator/src',
+        ),
         'Laminas\\Http\\' => 
         array (
             0 => __DIR__ . '/..' . '/laminas/laminas-http/src',
+        ),
+        'Laminas\\Form\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/laminas/laminas-form/src',
+        ),
+        'Laminas\\Filter\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/laminas/laminas-filter/src',
         ),
         'Laminas\\EventManager\\' => 
         array (
