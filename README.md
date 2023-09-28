@@ -3,10 +3,15 @@ Bin application readme
 Built using php7.4 and Laminas 3
 
 To Install:
+
 Go to the release/tag section on github
+
 download release 0.0.2
+
 unzip in a directory
+
 cd into the the directory on terminal
+
 
 can use local php or docker to start server:
 
