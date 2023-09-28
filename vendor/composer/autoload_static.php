@@ -43,6 +43,7 @@ class ComposerStaticInitab8368c8b9287e68b02f6c597899a6a1
         'B' => 
         array (
             'Brick\\VarExporter\\' => 18,
+            'BinUtil\\' => 8,
         ),
         'A' => 
         array (
@@ -135,6 +136,10 @@ class ComposerStaticInitab8368c8b9287e68b02f6c597899a6a1
         'Brick\\VarExporter\\' => 
         array (
             0 => __DIR__ . '/..' . '/brick/varexporter/src',
+        ),
+        'BinUtil\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/module/BinUtil/src',
         ),
         'Application\\' => 
         array (
